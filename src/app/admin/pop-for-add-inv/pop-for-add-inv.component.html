@@ -1,0 +1,29 @@
+<div>
+    <h2 style="text-align: center;color: rgb(0, 81, 255);">Add Inventory</h2>
+    <br>
+    <form (ngSubmit)="submitForm()" #materialForm="ngForm" style="background-color: rgb(67, 176, 230)">
+        <div >
+            <br>
+            <label for="materialName" > &nbsp;&nbsp; Material Name:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="materialName" name="materialName" [(ngModel)]="inventoryData.materialName" required>
+        </div>
+        <br>
+        <div>
+            <label for="availableQty">&nbsp;&nbsp; Available Quantity:</label>&nbsp;
+            <input type="number" id="availableQty" name="availableQty" [(ngModel)]="inventoryData.availableQty"
+                required>
+        </div>
+        <br>
+        <div>
+            <label for="locationNumber">&nbsp;&nbsp; Location Number:</label>&nbsp;&nbsp;
+            <input type="text" id="locationNumber" name="locationNumber" [(ngModel)]="inventoryData.locationNumber"
+                required>
+        </div>
+        <br>
+        
+    </form>
+    <div style="align-items: center;">
+        <button type="submit" style=" margin-left: 27%;margin-right: 5%;margin-top: 2%;" class="btn btn-outline-primary" [disabled]="materialForm.invalid">Submit</button>
+        <button type="button" style=" margin-right: 5%;margin-top: 2%;" class="btn btn-outline-warning" (click)="closePopup()">Cancel</button>
+        </div>
+</div>

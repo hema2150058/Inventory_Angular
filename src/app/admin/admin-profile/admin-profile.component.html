@@ -1,0 +1,46 @@
+
+<div class="container-fluid g-0">
+    <app-admin-header (sideNavToggled)="sideNavStatus = $event;"></app-admin-header>
+    <main>
+      <app-admin-sidenav [sideNavStatus]="sideNavStatus" [ngClass]="{'app-admin-sidenav-open' : sideNavStatus}">
+  
+      </app-admin-sidenav>
+      <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}">
+        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque veritatis dicta, deleniti
+          facere fuga cumque, recusandae beatae sapiente dolorum possimus iure accusamus perferendis doloribus, saepe at
+          nostrum. Modi, harum!
+        </p>
+        <div class="container">
+            <div class="card mx-auto" style="width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center;color: blue;">Admin Details</h4>
+                    <ul class="list-group list-group-flush" *ngFor= "let ser of userdetails">
+                        <li class="list-group-item">
+                            <strong style="padding-right: 20px;width: 50%;">Username: </strong>
+                            <span > &nbsp;{{ser.username}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong style="padding-right: 56px;width: 50%;">Name:</strong>
+                            <span>&nbsp;{{ser.name}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong style="padding-right: 60px;width: 50%;">Email:</strong>
+                            <span>&nbsp;{{ser.email}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong style="padding-right: 70px;width: 50%;">DOB:</strong>
+                            <span>{{ser.dob}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong style="padding-right: 59px;width: 50%;">Phone:</strong>
+                            <span>{{ser.phone}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <button routerLink="/admin-homepage" style="background-color: rgb(8, 80, 249);border-color: rgb(8, 80, 249) ;color: white;margin-left: 7rem;margin-bottom: 2rem;width: 5rem;height: 2rem;">Ok</button>
+            </div>
+        </div>
+  
+      </div>
+    </main>
+  </div>

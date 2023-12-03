@@ -1,0 +1,51 @@
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    opacity: 0.5;
+}
+ul {
+    list-style-type: none;
+    
+}
+li{
+    margin: 10px;
+}
+/* img{
+    margin-right: 5px;
+    
+} */
+.side-nav-content{
+    color: white;
+    width: 230px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.nav-list{
+    list-style: none;
+    height: 100%;
+    padding: 0;
+    margin-bottom: 0;
+}
+.mat-list-item{
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+.sideNavStatus .mat-list-item:hover{
+    background-color: rgb(255, 255, 255,0.3);
+    border-radius: 10px;
+    
+}
+
+.mat-list-item img{
+    font-size: 20px;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    margin-left: 8px;
+    margin-right: 15px;
+    line-height: 25px;
+}

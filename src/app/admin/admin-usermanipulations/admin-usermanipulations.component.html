@@ -1,0 +1,122 @@
+  <div class="container-fluid g-0">
+    <app-admin-header (sideNavToggled)="sideNavStatus = $event;"></app-admin-header>
+    <main>
+       <app-admin-sidenav [sideNavStatus]="sideNavStatus" [ngClass]="{'app-admin-sidenav-open' : sideNavStatus}">
+   
+       </app-admin-sidenav>
+       <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}" >
+           <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque veritatis dicta, deleniti facere fuga cumque, recusandae beatae sapiente dolorum possimus iure accusamus perferendis doloribus, saepe at nostrum. Modi, harum!
+           </p>
+           <div *ngIf="usermodel.length > 0 ; else noElements">
+
+           <h2 style="padding-left: 43%;color: #0000ff;">Users</h2>
+           <table class="table table-bordered" >
+            <thead>
+            <tr>
+                <th class="bg-primary">Username</th>
+                <th class="bg-primary">Full Name</th>
+                <th class="bg-primary">Email</th>
+                <th class="bg-primary">Phone number</th>
+                <th class="bg-primary">dob</th>
+                <th class="bg-primary">Upgrade User</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor= "let user of usermodel" class="table border-primary">
+                <td style="background-color: white"> {{user.username}} </td>
+                <td> {{user.name}} </td>
+                <td> {{user.email}} </td> 
+                <td> {{user.phone}} </td> 
+                <td> {{user.dob}} </td>
+                
+                <td><button href="#upgrade" [value]="user.username" class=" btn btn-outline-primary"  (click)="upgradeUser($event)">Upgrade</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #noElements>
+      <br><br>
+      <h3 style="text-align: center;">There are no Users .</h3>
+    </ng-template>
+   
+              
+       </div>
+    </main> 
+   </div> 
+   
+   
+   
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+
+<p>admin-usermanipulations works!</p>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" style="padding-left: 5%;"><h2>Users</h2></a>
+    <form class="form-inline">
+      <span style="padding-right: 20%;" class="form-inline" ><strong>Welcome admin</strong></span>
+      <button  class="btn btn-danger m-2 " style="margin-right: 20%;"  (click)="logout()">
+        Logout
+      </button>
+    </form>
+</nav>
+
+<div style="padding-left:10%;padding-right:10%;margin-left: 10%;margin-right: 10%;">
+
+    <table class="table table-bordered" >
+        <thead>
+        <tr class="table table-warning">
+            <th>Username</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>dob</th>
+            <th>Upgrade User</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor= "let user of usermodel" class="table table-info">
+            <td> {{user.username}} </td>
+            <td> {{user.name}} </td>
+            <td> {{user.email}} </td> 
+            <td> {{user.phone}} </td> 
+            <td> {{user.dob}} </td>
+            
+            <td><button href="#upgrade" [value]="user.username" style="color:rgb(0, 0, 0);background-color:rgb(255, 193, 154)" (click)="upgradeUser($event)">select</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+-->
+<!--
+</div>
+<div  style="text-align:left;padding-left: 30%;padding-right: 30%;">
+    <table  class="table table-bordered" style="border:1px solid rgb(6, 187, 242)">
+        <tbody>
+            <th>
+                <tr></tr>
+            </th>
+            <tr >
+                <tr *ngFor= "let ser of usermodel" >
+                  <td class="table table-info ">
+                    <tr>username : {{ser.username}}</tr>
+                    <tr>name : {{ser.name}}</tr>
+                    <tr>email : {{ser.email}}</tr>
+                    <tr>dob : {{ser.dob}}</tr>
+                    <tr>phone : {{ser.phone}}</tr>  
+                  </td>
+                </tr>
+        </tbody>
+    </table>
+    </div>
+-->

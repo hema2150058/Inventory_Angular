@@ -1,0 +1,56 @@
+app-user-header{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 4rem;
+    z-index : 2;
+}
+main{
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+}
+.display-area{
+    position: absolute;
+    
+}
+p{
+    visibility: hidden;
+}
+
+
+.body {
+    background-color: #f8f9fa;
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  .card {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .list-group-item {
+    background-color: #f8f9fa;
+    /* display: flex;
+    justify-content: first baseline; */
+    align-items: center;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    padding-left: 2rem;
+  }
+
+  strong {
+    color: #343a40;
+  }

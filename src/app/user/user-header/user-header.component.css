@@ -1,0 +1,19 @@
+.dropbtn:hover{
+    background-color: rgb(109, 180, 243);
+}
+nav{
+    height: 100%;
+}
+
+.side-nav-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.side-nav-button:hover{
+    background-color: rgb(10, 10, 234);
+    border-radius: 25%;
+}

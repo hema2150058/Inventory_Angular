@@ -1,0 +1,56 @@
+<!--
+<div class="container mt-5">
+    <h2>Portal Login</h2>
+    <form [formGroup]="form" (ngSubmit)="onLogin()">
+      <div class="mb-3">
+        <label for="UserName" class="form-label">User Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter UserName"
+          formControlName="userName"
+          id="userName"
+        />
+
+        <div
+          *ngIf="
+            form.controls['userName'].invalid &&
+            form.controls['userName'].touched
+          "
+        >
+          <div class="alert alert-danger">UserName is required</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter password"
+          formControlName="password"
+        />
+      </div>
+      <div
+        *ngIf="
+          form.controls['password'].invalid && form.controls['password'].touched
+        "
+      >
+        <div class="alert alert-danger">password is required</div>
+      </div>
+  
+      <div *ngIf="isError">
+        <div class="alert alert-danger">User not found</div>
+      </div>
+  
+      <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Login</button>
+      <br>
+      <small class="float-right" routerLink="/register" >New User ? <u>Register here</u></small>
+    </form>
+  </div>
+
+-->  
+  
+---testing mat dialog functionality----
+<button class="btn btn-primary" (click)="openDialog()">Click to open pop up</button>

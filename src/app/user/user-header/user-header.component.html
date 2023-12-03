@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary px-2">
+    <!-- <div class="side-nav-button p-2 me-3 text-light" (click)="sideNavToggle()">
+        <img src="https://www.pinclipart.com/picdir/big/532-5328945_menu-bar-icon-white-clipart-png-download-menu.png" width="30px" height="30px" >
+    </div> -->
+    <a class="navbar-brand px-4" style="text-transform: capitalize;">Welcome {{username}}</a>
+    <div class="navbar-collapse">
+        <ul class="navbar-nav me-auto">
+            <!-- <li>
+                <div ngbDropdown class="dropdown">
+                    <button class="btn btn-primary" id="gfg" ngbDropdownToggle>Services</button>
+                    <div ngbDropdownMenu="gfg">
+                        <button class="dropbtn " [routerLink]="['/admin-homepage']" ngbDropdownItem>View Orders</button>
+                        <button class="dropbtn" [routerLink]="['/admin-homepage']" ngbDropdownItem></button>
+                        <button class="dropbtn" [routerLink]="['/admin-usermanipulations']" ngbDropdownItem>Upgrade User</button>
+                        <button class="dropbtn" [routerLink]="['/admin-usermanipulations']" ngbDropdownItem>Users</button>
+                    </div>
+                </div>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" [routerLink]="['/user-homepage']" >Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/user-homepage']">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/user-orders']">Orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/about']">About Us</a>
+            </li>
+        </ul>
+    </div>
+
+    <form class="d-flex me-4" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-warning"  type="submit">Search</button>
+    </form>
+
+    <div ngbDropdown class="profile-logo dropstart" style="color: white; padding-right: 3%;"  >
+        <button class="btn btn-outline-light"  id="gfg" ngbDropdownToggle><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg></button>
+        <div ngbDropdownMenu="gfg">
+            <button class="dropbtn" [routerLink]="['/user-service']" ngbDropdownItem>Your Profile</button>
+            <button class="dropbtn" ngbDropdownItem>Settings</button>
+            <button class="dropbtn" (click)="logout()" ngbDropdownItem>Log out</button>
+        </div>
+    </div>
+
+</nav>

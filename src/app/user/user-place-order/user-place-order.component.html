@@ -1,0 +1,113 @@
+<!-- <h2 mat-dialog-title>Place Order</h2>
+<div mat-dialog-content>
+  
+  <div>
+    <label for="locationNumber">Location Number:</label>
+    <label>{{ data.locationNumber }}</label>
+  </div>
+  <div>
+    <label for="materialId">Material ID:</label>
+    <label>{{ data.materialId }}</label>
+  </div>
+  <div>
+    <label for="orderQty">Order Quantity:</label>
+    <input type="number" id="orderQty" [(ngModel)]="data.orderQty" />
+  </div>
+  <div>
+    <label for="userName">User Name:</label>
+    <label>{{ data.userName }}</label>
+  </div>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="placeOrder()">Place Order</button>
+</div> 
+-------------------- 
+-->
+
+<!-- 
+<div>
+    <h2 style="text-align: center;">Place Order</h2>
+    <br><br>
+    <form (ngSubmit)="submitOrder()" ngForm #materialForm="ngForm" style="background-color: rgb(157, 157, 240)">
+        <div>
+            <label for="locationNumber">Location Number:</label>
+            <label>{{ data.locationNumber }}</label>
+          </div>
+          <div>
+            <label for="materialId">Material ID:</label>
+            <label>{{ data.materialId }}</label>
+          </div>
+          <div>
+            <label for="orderQty">Order Quantity:</label>
+            <input type="number" id="orderQty" [(ngModel)]="data.orderQty" required />
+          </div>
+        <br>
+        <div style="align-items: center;">
+        <button type="submit" [disabled]="materialForm.invalid">Submit</button>
+        <button type="button" (click)="onNoClick()">Cancel</button>
+        </div>
+    </form>
+</div> -->
+
+
+
+
+
+
+<div class="container">
+    <div class="container" style="background-color: white;text-align: center;">
+        <h2 style="color: rgb(4, 154, 223); text-align: center;">Order here</h2>
+        <form ngForm #OrderForm="ngForm" (ngSubmit)="submitOrder()" >
+            <!-- <div class="form-group">
+                <label for="user">User: </label>
+                <label [(ngModel)]="userName" name="user" >{{userName}}</label>
+            </div>
+            <div class="form-group">
+                <label for="locationNumber">Location: </label>
+                <label [(ngModel)]="locationNumber">{{locationNumber}}</label>
+            </div>
+            <div class="form-group">
+                <label for="materialId">Material Id:</label>
+                <label  [(ngModel)]="materialId" >{{materialId}}</label>
+            </div>
+            <div class="form-group">
+                <label for="orderQty">Order Quantity:</label>
+                <input type="number" class="form-control" id="qty" placeholder="Enter quantity" name="qty"
+                  [(ngModel)]="order.orderQty" required #orderQty="ngModel"
+                  [class.is-invalid]="orderQty.touched">
+                <small class="text-danger" [class.d-none]="orderQty.valid || orderQty.untouched">Quantityis required</small>
+              </div> -->
+
+              <div class="form-group">
+                <label for="user">User: </label>
+                <input type="text" id="user" class="form-control" [(ngModel)]="userName" name="user" disabled />
+            </div>
+            <!-- <div class="form-group">
+                <label for="locationNumber">Location: </label>
+                <input type="text" id="locationNumber" class="form-control" [(ngModel)]="locationNumber" name="locationNumber"  />
+            </div> -->
+            <div class="form-group">
+                <label for="materialId">Material Id:</label>
+                <input type="text" id="materialId" class="form-control" [(ngModel)]="materialId" name="materialId" disabled />
+            </div>
+            <div class="form-group">
+                <label for="orderQty">Order Quantity:</label>
+                <input type="number" class="form-control" id="qty" placeholder="Enter quantity" name="qty"
+                    [(ngModel)]="orderq" required #orderQty="ngModel"
+                    [class.is-invalid]="orderQty.touched">
+                <small class="text-danger" [class.d-none]="orderQty.valid || orderQty.untouched">Quantity is required</small>
+            </div>
+              
+
+            <br>
+            <button [disabled]="OrderForm.form.invalid" type="submit" style="margin-left: 8%;" class="btn btn-primary">Order</button>
+            
+            <button type="button" style="margin-left: 15%;" (click)="cancelOrder()" class="btn btn-primary">Cancel</button>
+        </form>
+        <!--<small class="float-right" (click)="gotoregistration()">New User ? Register here</small> -->
+        
+    </div>
+    
+</div>

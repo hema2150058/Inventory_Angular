@@ -1,0 +1,60 @@
+<!-- <table  class="table table-bordered" style="border:1px solid rgb(6, 187, 242)">
+    <tbody>
+        <tr >
+            <tr *ngFor= "let ser of userdetails" >
+              <td class="table table-info ">
+                <tr>username : {{ser.username}}</tr>
+                <tr>name : {{ser.name}}</tr>
+                <tr>email : {{ser.email}}</tr>
+                <tr>dob : {{ser.dob}}</tr>
+                <tr>phone : {{ser.phone}}</tr>  
+              </td>
+            </tr>
+    </tbody>
+</table> -->
+<div class="body">
+<div class="container-fluid g-0">
+    <app-user-header (sideNavToggled)="sideNavStatus = $event;"></app-user-header>
+    <main>
+
+        <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}">
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque veritatis dicta,
+                deleniti facere fuga cumque, recusandae beatae sapiente dolorum possimus iure accusamus perferendis
+                doloribus, saepe at nostrum. Modi, harum!
+            </p>
+            
+
+            <div class="container">
+                <div class="card mx-auto" style="width: 20rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">User Details</h5>
+                        <ul class="list-group list-group-flush" *ngFor= "let ser of userdetails">
+                            <li class="list-group-item">
+                                <strong style="padding-right: 20px;width: 50%;">Username: </strong>
+                                <span > {{ser.username}}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong style="padding-right: 56px;width: 50%;">Name:</strong>
+                                <span>{{ser.name}}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong style="padding-right: 60px;width: 50%;">Email:</strong>
+                                <span>{{ser.email}}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong style="padding-right: 70px;width: 50%;">DOB:</strong>
+                                <span>{{ser.dob}}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong style="padding-right: 59px;width: 50%;">Phone:</strong>
+                                <span>{{ser.phone}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button routerLink="/user-homepage" style="background-color: rgb(8, 80, 249);border-color: rgb(8, 80, 249) ;color: white;margin-left: 7rem;margin-bottom: 2rem;width: 5rem;height: 2rem;">Ok</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</div>

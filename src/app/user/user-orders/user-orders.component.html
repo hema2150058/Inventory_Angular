@@ -1,0 +1,38 @@
+<div class="container-fluid g-0">
+    <app-user-header (sideNavToggled)="sideNavStatus = $event;"></app-user-header>
+    <main>
+
+        <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}">
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque veritatis dicta,
+                deleniti facere fuga cumque, recusandae beatae sapiente dolorum possimus iure accusamus perferendis
+                doloribus, saepe at nostrum. Modi, harum!
+            </p>
+            <h2 style="padding-left: 40%;color: #0000ff;">Orders</h2>
+
+           <table class="table align-middle table-bordered border-primary  bg-white" >
+            <thead class="bg-light">
+              <tr>
+                
+                <th style="width: 20%;">Order Id</th>
+                <th style="width: 20%;">Material Id</th>
+                <th style="width: 20%;">Order Quantity</th>
+                <th style="width: 20%;">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <tr *ngFor="let allorders of order">
+                  
+                  <td>{{allorders.orderId}}</td>
+                  <td>{{allorders.materialId}}</td>
+                  <td>{{allorders.orderQty}}</td>
+                  <td>{{allorders.orderSatus}}</td> 
+                </tr>
+  
+            </tbody>
+          </table>
+   
+
+        </div>
+    </main>
+</div>

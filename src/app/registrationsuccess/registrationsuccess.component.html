@@ -1,0 +1,123 @@
+<div class="bg"
+    style="height: 100%;width: 100%; background-image: url('https://tse3.mm.bing.net/th?id=OIP.fKd5u-LZ22Q78HfwW_6jywHaEo&pid=Api&P=0&h=180')">
+    <div class="container">
+        <br><br><br><br>
+        <div class="container" style="max-width: 700px;height: 600px;background-color: white;">
+            <h2 style="color: rgb(18, 26, 46); text-align: center;margin-bottom: 5%;padding-top: 3%;">Registration
+            </h2>
+            <form #Registerform="ngForm" (ngSubmit)="registerUser()" style=" margin-left: 10%;margin-right: 10%;">
+                <small class="text-danger">{{msg}}</small>
+                <div class="row">
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" placeholder="Enter email" name="emailId"
+                            [(ngModel)]="user.email" #email="ngModel" size="5" required
+                            pattern="^[a-z0-9](\.?[a-z0-9]){5,}@gmail\.com$"
+                            [class.is-invalid]="email.invalid && email.touched">
+                        <div *ngIf="email.errors && (email.invalid && email.touched)">
+                            <small class="text-danger" *ngIf="email.errors?.['required']">Email Id is
+                                required</small>
+                            <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter the valid
+                                emailId</small>
+                            <small class="text-danger" *ngIf="email.errors?.['email']">Email Id is exist</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-5 pe-md-3">
+                        <div class="form-group">
+                            <label for="username">UserName:</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter username"
+                                name="username" [(ngModel)]="user.username" required #username="ngModel"
+                                [class.is-invalid]="username.invalid && username.touched">
+                            <small class="text-danger" [class.d-none]="username.valid || username.untouched">username is
+                                required</small>
+                        </div>
+                    </div> -->
+
+                <br>
+                <div class="row">
+                    <div class="col-md pe-md-3">
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd"
+                                [(ngModel)]="user.password" required #password="ngModel" minlength="8" maxlength="15"
+                                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"
+                                [class.is-invalid]="password.invalid && password.touched">
+                            <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is
+                                required</small>
+                            <small class="text-danger" *ngIf="password.errors?.['pattern']">Enter the valid
+                                password</small>
+                            <small class="text-danger" *ngIf="password.errors?.['minlength']">&nbsp; Min 8 char</small>
+                            <small class="text-danger" *ngIf="password.errors?.['maxlength']">Max 15 char</small>
+                        </div>
+                    </div>
+                    <div class="col-md pe-md-3">
+                        <div class="form-group">
+                            <label for="pwd">Re-enter Password:</label>
+                            <input type="password" class="form-control" placeholder="Re-enter Password" name="cpassword"
+                                #cpassword="ngModel" (ngModel)="user.password" required
+                                [class.is-invalid]="cpassword.invalid && cpassword.touched">
+                            <small class="text-danger"
+                                [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">Password
+                                should
+                                match</small>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                        <div class="col-md pe-md-3">
+                            <div class="form-group">
+                                <label for="username">UserName:</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter username"
+                                    name="username" [(ngModel)]="user.username" required #username="ngModel"
+                                    [class.is-invalid]="username.invalid && username.touched">
+                                <small class="text-danger"
+                                    [class.d-none]="username.valid || username.untouched">username is
+                                    required</small>
+                            </div>
+                        </div>
+                    
+                    <div class="col-md pe-md-3">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" class="form-control" placeholder="Enter name" name="name"
+                                [(ngModel)]="user.name" required #name="ngModel" minlength="5" maxlength="20"
+                                [class.is-invalid]="name.invalid && name.touched">
+                            <div *ngIf="name.errors && (name.touched && name.invalid)">
+                                <small class="text-danger" *ngIf="name.errors?.['minlength']">Min 5 characters</small>
+                                <small class="text-danger" *ngIf="name.errors?.['maxlength']">Max 20 characters</small>
+                                <small class="text-danger" *ngIf="name.errors?.['required']">firstname is required
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md pe-md-3">
+                        <div class="form-group">
+                            <label for="phone">Phone number:</label>
+                            <input type="text" class="form-control" placeholder="enter phone number" name="phone"
+                                maxlength="10" pattern="(0/91)?[6-9][0-9]{9}" [(ngModel)]="user.phone">
+                            <!--<small class="text-danger" *ngIf="userpno.errors?.['pattern']">Enter the valid phone number</small>-->
+                        </div>
+                    </div>
+                    <div class="col-md pe-md-3">
+                        <div class="form-group">
+                            <label for="dob" >Date of Birth : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <input type="date" class="form-control" name="dob" id="dob" [(ngModel)]="user.dob" style="width: 80%;padding: 2.4%; border-radius: 5px;">
+                            <!--    <input type="date" [min]="cuurentDate | date:'MM-dd-yyyy'" name="dob" id="dob" [(ngModel)]="user.dob">
+            -->
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
+                <small style="cursor: pointer;" [routerLink]="['/login']">Existing user? <strong> Login </strong></small>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>

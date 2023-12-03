@@ -1,0 +1,46 @@
+<div class="container-fluid g-0">
+  <app-user-header (sideNavToggled)="sideNavStatus = $event;"></app-user-header>
+  <main>
+     
+     <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}" >
+         <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque veritatis dicta, deleniti facere fuga cumque, recusandae beatae sapiente dolorum possimus iure accusamus perferendis doloribus, saepe at nostrum. Modi, harum!
+         </p>
+         <app-products></app-products>
+         <!-- <div *ngIf="pendingOrders.length > 0 ; else noElements">
+         <h2 style="padding-left: 40%;">Pending Orders</h2>
+         
+         <table class="table align-middle table-bordered border-primary  bg-white" >
+           <thead class="bg-light">
+             <tr>
+               <th style="width: 20%;">UserName</th>
+               <th style="width: 20%;">Order Id</th>
+               <th style="width: 20%;">Material Id</th>
+               <th style="width: 20%;">Order Quantity</th>
+               <th style="width: 20%;">Status</th>
+               <th style="width: 20%;">Action</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <tr *ngFor="let pendingorders of pendingOrders">
+                 <td>{{pendingorders.userName}}</td>
+                 <td>{{pendingorders.orderId}}</td>
+                 <td>{{pendingorders.materialId}}</td>
+                 <td>{{pendingorders.orderQty}}</td>
+                 <td>{{pendingorders.orderSatus}}</td>
+                 <td >
+                   <button class="btn btn-outline-primary"  [value]="pendingorders.orderId" (click)="accepted($event)">accept</button> 
+                 </td>
+               </tr>
+ 
+           </tbody>
+         </table>
+        </div>
+        <ng-template #noElements>
+          <br><br>
+          <h3 style="text-align: center;">No Pending Orders .</h3>
+        </ng-template>
+             -->
+     </div>
+  </main> 
+ </div> 

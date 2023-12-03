@@ -1,0 +1,53 @@
+<div class="container-fluid g-0">
+  <app-admin-header (sideNavToggled)="sideNavStatus = $event;"></app-admin-header>
+  <main>
+    <app-admin-sidenav [sideNavStatus]="sideNavStatus" [ngClass]="{'app-admin-sidenav-open' : sideNavStatus}">
+
+    </app-admin-sidenav>
+    <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}">
+      <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque veritatis dicta, deleniti
+        facere fuga cumque, recusandae beatae sapiente dolorum possimus iure accusamus perferendis doloribus, saepe at
+        nostrum. Modi, harum!
+      </p>
+      <h2 style="padding-left: 40%;color: #0055ff;font-size: 260%;">Inventory</h2>
+      <div>
+        <button class="btn btn-outline-primary" style="margin-left: 40%;" (click)="addInventory()">Add More
+          Inventory</button>
+        <div class="input-group" style="width: 10%;margin-left: 60%;">
+          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" (input)="onSearchInputChange($event)" />
+          <button type="button" class="btn btn-outline-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+          </svg></button>
+        </div>
+      </div>
+      <table class="table align-middle table-bordered border-primary  bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th style="width: 20%;">material Id</th>
+            <th style="width: 20%;">material Name</th>
+            <th style="width: 20%;">available Quantity</th>
+            <th style="width: 20%;">location Number</th>
+            <th style="width: 20%;"></th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <tr *ngFor="let prod of filteredProducts">
+            <td>{{prod.materialId}}</td>
+            <td>{{prod.materialName}}</td>
+            <td>{{prod.availableQty}}</td>
+            <td>{{prod.locationNumber}}</td>
+            <td>
+              <!-- <button class="btn btn-outline-primary"  [value]="prod.materialId" (click)="accepted($event)">accept</button> \
+                     -->
+              <button class="btn btn-outline-primary" (click)="deleteInventoryItem(prod.materialId)">Delete</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>

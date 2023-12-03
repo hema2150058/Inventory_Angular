@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary px-2">
+    <div class="side-nav-button p-2 me-3 text-light" (click)="sideNavToggle()">
+        <!-- <i class="fa-solid fa-bars"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" style="color: white;"
+                viewBox="0 0 448 512">
+                <path
+                    d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+            </svg>
+        </i> -->
+        <img src="https://www.pinclipart.com/picdir/big/532-5328945_menu-bar-icon-white-clipart-png-download-menu.png" width="30px" height="30px" >
+    </div>
+    <a class="navbar-brand px-4" >Admin</a>
+    <div class="navbar-collapse">
+        <ul class="navbar-nav me-auto">
+            <li>
+                <div ngbDropdown class="dropdown">
+                    <button class="btn btn-primary" id="gfg" ngbDropdownToggle>Services</button>
+                    <div ngbDropdownMenu="gfg">
+                        <button class="dropbtn " [routerLink]="['/admin-homepage']" ngbDropdownItem>View Requests</button>
+                        <button class="dropbtn" [routerLink]="['/admin-service']" ngbDropdownItem>Edit Inventory</button>
+                        <button class="dropbtn" [routerLink]="['/admin-usermanipulations']" ngbDropdownItem>Upgrade User</button>
+                        <button class="dropbtn" [routerLink]="['/admin-usermanipulations']" ngbDropdownItem>Users</button>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" [routerLink]="['/admin-homepage']" >Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/admin-inventory']">Product</a>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" (click)="showAbout()">About Us</button>
+            </li>
+        </ul>
+    </div>
+
+    <form class="d-flex me-5" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-warning"  type="submit">Search</button>
+    </form>
+
+    <div ngbDropdown class="profile-logo dropstart" >
+        <button class="btn btn-outline-light" id="gfg" ngbDropdownToggle>Profile</button>
+        <div ngbDropdownMenu="gfg">
+            <button class="dropbtn" [routerLink]="['/admin-profile']" ngbDropdownItem>Your Profile</button>
+            <button class="dropbtn" ngbDropdownItem>Settings</button>
+            <button class="dropbtn" (click)="logout()" ngbDropdownItem>Log out</button>
+        </div>
+    </div>
+
+</nav>

@@ -1,0 +1,60 @@
+app-admin-header{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 4rem;
+    z-index : 2;
+}
+
+main{
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+}
+app-admin-sidenav{
+    position: absolute;
+    left: 0rem;
+    width: 70px;
+    height: calc(100vh - 4rem);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgb(0, 119, 255);
+    border-top: 1px solid white;
+    overflow-x: hidden;
+    white-space: nowrap;
+    transition: width 250ms ease-in;
+
+}
+.display-area{
+    position: absolute;
+    left: 70px;
+    width: calc(100%-250px);
+}
+.display-area-shrink{
+    width: calc(100% -250px);
+    left: 250px;
+    transition:left 250px ease-in, width 250ms ease-in;
+
+}
+.app-admin-sidenav-open{
+    width: 250px;
+
+}
+
+
+
+table{
+    position: absolute;
+    width: 50%;
+    padding-left: 30%;
+    padding-right: 30%; 
+    margin-left: 20%;
+    margin-top: 5px;
+   
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+p{
+    
+    visibility: hidden;
+}

@@ -1,0 +1,145 @@
+<!-- <nav>
+<button type="button" class="btn btn-outline-primary">inventory</button>
+<button type="button" class="btn btn-outline-secondary" routerLink="/admin-usermanipulations">getAllUsers</button>
+<button type="button" class="btn btn-outline-success">upgradeUser</button>
+<button type="button" class="btn btn-outline-danger">Home</button>
+<button type="button" class="btn btn-outline-warning">Warning</button>
+<button type="button" class="btn btn-outline-info">Info</button>
+<button type="button" class="btn btn-link">Link</button>
+</nav> -->
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> -->
+<!-- 
+
+<div class="container-fluid g-0">
+ <app-admin-header (sideNavToggled)="sideNavStatus = $event;"></app-admin-header>
+ <main>
+    <app-admin-sidenav [sideNavStatus]="sideNavStatus" [ngClass]="{'app-admin-sidenav-open' : sideNavStatus}">
+
+    </app-admin-sidenav>
+    <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}" >
+        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque veritatis dicta, deleniti facere fuga cumque, recusandae beatae sapiente dolorum possimus iure accusamus perferendis doloribus, saepe at nostrum. Modi, harum!
+        </p>
+        <h2 style="padding-left: 40%;">Pending Orders</h2>
+
+        <table class="table align-middle table-bordered border-primary  bg-white" >
+          <thead class="bg-light">
+            <tr>
+              <th style="width: 20%;">UserName</th>
+              <th style="width: 20%;">Order Id</th>
+              <th style="width: 20%;">Material Id</th>
+              <th style="width: 20%;">Order Quantity</th>
+              <th style="width: 20%;">Status</th>
+              <th style="width: 20%;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <tr *ngFor="let pendingorders of pendingOrders">
+                <td>{{pendingorders.userName}}</td>
+                <td>{{pendingorders.orderId}}</td>
+                <td>{{pendingorders.materialId}}</td>
+                <td>{{pendingorders.orderQty}}</td>
+                <td>{{pendingorders.orderSatus}}</td>
+                <td >
+                  <button class="btn btn-outline-primary"  [value]="pendingorders.orderId" (click)="accepted($event)">accept</button> 
+                </td>
+              </tr>
+
+          </tbody>
+        </table>
+
+           
+    </div>
+ </main> 
+</div> 
+ -->
+
+
+<div class="container-fluid g-0">
+  <app-admin-header (sideNavToggled)="sideNavStatus = $event;"></app-admin-header>
+  <main>
+    <app-admin-sidenav [sideNavStatus]="sideNavStatus" [ngClass]="{'app-admin-sidenav-open' : sideNavStatus}">
+
+    </app-admin-sidenav>
+    <div class="display-area" [ngClass]="{'display-area-shrink': sideNavStatus}">
+      <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque veritatis dicta, deleniti
+        facere fuga cumque, recusandae beatae sapiente dolorum possimus iure accusamus perferendis doloribus, saepe at
+        nostrum. Modi, harum!
+      </p>
+      <div *ngIf="pendingOrders.length > 0 ; else noElements">
+        <h2 style="padding-left: 40%;color: #1212ed;">Pending Orders</h2>
+
+        <table class="table align-middle table-bordered border-primary  bg-white">
+          <thead class="bg-light">
+            <tr>
+              <th style="width: 20%;">UserName</th>
+              <th style="width: 20%;">Order Id</th>
+              <th style="width: 20%;">Material Id</th>
+              <th style="width: 20%;">Order Quantity</th>
+              <th style="width: 20%;">Status</th>
+              <th style="width: 20%;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <tr *ngFor="let pendingorders of pendingOrders">
+              <td>{{pendingorders.userName}}</td>
+              <td>{{pendingorders.orderId}}</td>
+              <td>{{pendingorders.materialId}}</td>
+              <td>{{pendingorders.orderQty}}</td>
+              <td>{{pendingorders.orderSatus}}</td>
+              <td>
+                <button class="btn btn-outline-primary" [value]="pendingorders.orderId"
+                  (click)="accepted($event)">Accept</button> &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-outline-danger" [value]="pendingorders.orderId"
+                  (click)="decline(pendingorders.orderId)">Decline</button>
+
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <ng-template #noElements>
+        <br><br>
+        <h3 style="text-align: center;">No Pending Orders ...</h3>
+      </ng-template>
+      <div [innerHTML]="displayData"></div>
+    </div>
+  </main>
+</div>

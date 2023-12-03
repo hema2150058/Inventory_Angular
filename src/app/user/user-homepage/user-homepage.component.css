@@ -1,0 +1,26 @@
+app-user-header{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 4rem;
+    z-index : 2;
+}
+main{
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+}
+.display-area{
+    position: absolute;
+    
+}
+p{
+    visibility: hidden;
+}
+app-products{
+    position: absolute;
+    width: 100%;
+    top: -5rem;
+    z-index: 1;
+}
